@@ -1,47 +1,46 @@
-package pe.edu.upeu.parciallp.serviceimpl;
+package pe.edu.upeu.parciallp.daoimpl;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import pe.edu.upeu.parciallp.dao.EscuelaDao;
 import pe.edu.upeu.parciallp.entity.Escuela;
-import pe.edu.upeu.parciallp.service.EscuelaService;
+import pe.edu.upeu.parciallp.repository.EscuelaRepository;
 
-@Service
-public class EscuelaServiceImpl implements EscuelaService{
+@Component
+public class EscuelaDaoImpl implements EscuelaDao{
 	@Autowired
-	private EscuelaDao escuelaDao;
+	private EscuelaRepository escuelaRepository;
 	@Override
 	public Escuela create(Escuela e) {
 		// TODO Auto-generated method stub
-		return escuelaDao.create(e);
+		return escuelaRepository.save(e);
 	}
 
 	@Override
 	public Escuela update(Escuela e) {
 		// TODO Auto-generated method stub
-		return escuelaDao.update(e);
+		return escuelaRepository.save(e);
 	}
 
 	@Override
 	public void delete(Long id) {
 		// TODO Auto-generated method stub
-		escuelaDao.delete(id);
+		escuelaRepository.deleteById(id);
 	}
 
 	@Override
 	public Escuela read(Long id) {
 		// TODO Auto-generated method stub
-		return escuelaDao.read(id);
+		return escuelaRepository.findById(id).get();
 	}
 
 	@Override
 	public List<Escuela> readAll() {
 		// TODO Auto-generated method stub
-		return escuelaDao.readAll();
+		return escuelaRepository.findAll();
 	}
 
 }

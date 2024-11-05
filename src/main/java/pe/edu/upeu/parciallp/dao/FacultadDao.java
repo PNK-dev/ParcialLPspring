@@ -1,11 +1,10 @@
-package pe.edu.upeu.parciallp.service;
+package pe.edu.upeu.parciallp.dao;
 
 import java.util.List;
-import java.util.Optional;
 
 import pe.edu.upeu.parciallp.entity.Facultad;
 
-public interface FacultadService {
+public interface FacultadDao {
 	Facultad create(Facultad f);
 	Facultad update(Facultad f);
 	void delete(Long id);

@@ -1,13 +1,11 @@
-package pe.edu.upeu.parciallp.service;
+package pe.edu.upeu.parciallp.dao;
 
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.stereotype.Service;
-
 import pe.edu.upeu.parciallp.entity.Escuela;
 
-public interface EscuelaService {
+public interface EscuelaDao {
 	Escuela create(Escuela e);
 	Escuela update(Escuela e);
 	void delete(Long id);

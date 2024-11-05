@@ -1,46 +1,46 @@
-package pe.edu.upeu.parciallp.serviceimpl;
+package pe.edu.upeu.parciallp.daoimpl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import pe.edu.upeu.parciallp.dao.FacultadDao;
 import pe.edu.upeu.parciallp.entity.Facultad;
-import pe.edu.upeu.parciallp.service.FacultadService;
+import pe.edu.upeu.parciallp.repository.FacultadRepository;
 
-@Service
-public class FacultadServiceImpl implements FacultadService{
+@Component
+public class FacultadDaoImpl implements FacultadDao{
 	@Autowired
-	private FacultadDao facultadDao;
+	private FacultadRepository facultadRepository;
 	@Override
 	public Facultad create(Facultad f) {
 		// TODO Auto-generated method stub
-		return facultadDao.create(f);
+		return facultadRepository.save(f);
 	}
 
 	@Override
 	public Facultad update(Facultad f) {
 		// TODO Auto-generated method stub
-		return facultadDao.update(f);
+		return facultadRepository.save(f);
 	}
 
 	@Override
 	public void delete(Long id) {
 		// TODO Auto-generated method stub
-		facultadDao.delete(id);
+		facultadRepository.deleteById(id);
 	}
 
 	@Override
 	public Facultad read(Long id) {
 		// TODO Auto-generated method stub
-		return facultadDao.read(id);
+		return facultadRepository.findById(id).get();
 	}
 
 	@Override
 	public List<Facultad> readAll() {
 		// TODO Auto-generated method stub
-		return facultadDao.readAll();
+		return facultadRepository.findAll();
 	}
 
 }
